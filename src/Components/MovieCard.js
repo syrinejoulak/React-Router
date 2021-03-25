@@ -15,7 +15,7 @@ const setVoteClass = (vote) => {
 const MovieCard = ({ poster, title, rate, overview, trailer,setSelectedMovie }) => {
   return (
     <Link
-      to={`/description/${title}/`}
+      to={`/description/${title.split(" ").join("-")}/`}
       onClick={() => setSelectedMovie({ poster, title, rate, overview, trailer })}
     >
       <div className="movie">
