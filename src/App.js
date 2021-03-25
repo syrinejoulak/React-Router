@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      selectedMovie:{},
+      selectedMovie: {},
       movies: movies,
       searchfield: "",
       rateCheck: 0,
@@ -29,7 +29,7 @@ class App extends Component {
   onAddChange = (newMovie) => {
     this.setState({ movies: [...this.state.movies, newMovie] });
   };
-  setSelectedMovie = (blabla)=>this.setState({selectedMovie:blabla})
+  setSelectedMovie = (blabla) => this.setState({ selectedMovie: blabla });
 
   render() {
     const filtredMovies = this.state.movies.filter((movies) => {
@@ -46,23 +46,28 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navbar onSearch={this.onSearchChange} onRate={this.onRateChange} />
           <Switch>
             <Route
               path="/"
               exact
               render={(props) => (
-                <MovieList
-                  movies={filtredMovies}
-                  addMovie={this.onAddChange}
-                  isAuthed={true}
-                  setSelectedMovie={this.setSelectedMovie}
-                />
+                <div>
+                  <Navbar
+                    onSearch={this.onSearchChange}
+                    onRate={this.onRateChange}
+                  />
+                  <MovieList
+                    movies={filtredMovies}
+                    addMovie={this.onAddChange}
+                    isAuthed={true}
+                    setSelectedMovie={this.setSelectedMovie}
+                  />
+                </div>
               )}
             />
-            <Route path="/description"  >
-              <Description selectedMovie={this.state.selectedMovie}/>
-              </Route>
+            <Route path="/description">
+              <Description selectedMovie={this.state.selectedMovie} />
+            </Route>
           </Switch>
         </div>
       </Router>

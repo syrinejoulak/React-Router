@@ -158,16 +158,21 @@ h6 {
   transform: scale(1.1);
 }
 .description {
-  background: conic-gradient(from 45deg, #c5d7bd, orange, #fb743e, #9fb8ad, #383e56, #fb743e) ;
+  background: conic-gradient(
+    from 45deg,
+    #c5d7bd,
+    orange,
+    #fb743e,
+    #9fb8ad,
+    #383e56,
+    #fb743e
+  );
   color: white;
   border-top: 5px solid #fb743e;
-
-
 }
 .description > h1 {
   font-family: Righteous;
   text-align: center;
-
 }
 .trailer {
   width: 50rem;
@@ -178,7 +183,7 @@ h6 {
 .trailer-container {
   text-align: center;
   padding: 2rem;
- 
+
   border-bottom: 5px solid #fb743e;
 }
 .description-overview {
@@ -187,4 +192,8 @@ h6 {
 }
 .overview-container {
   background-color: #383e56;
+}
+.back-btn {
+  width: 2rem;
+  position: relative;
 }
