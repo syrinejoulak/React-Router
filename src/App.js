@@ -5,6 +5,7 @@ import MovieList from "./Components/MovieList";
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Description from "./Components/Description";
+import Scroll from "./Components/Scroll";
 
 class App extends Component {
   constructor() {
@@ -56,12 +57,14 @@ class App extends Component {
                     onSearch={this.onSearchChange}
                     onRate={this.onRateChange}
                   />
-                  <MovieList
-                    movies={filtredMovies}
-                    addMovie={this.onAddChange}
-                    isAuthed={true}
-                    setSelectedMovie={this.setSelectedMovie}
-                  />
+                  <Scroll>
+                    <MovieList
+                      movies={filtredMovies}
+                      addMovie={this.onAddChange}
+                      isAuthed={true}
+                      setSelectedMovie={this.setSelectedMovie}
+                    />
+                  </Scroll>
                 </div>
               )}
             />
